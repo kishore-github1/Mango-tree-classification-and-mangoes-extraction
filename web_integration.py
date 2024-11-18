@@ -25,6 +25,12 @@ model = YOLO(model_path)
 variety_tracking_model_path = os.path.join('models', 'classification.pt')
 variety_tracking_model = YOLO(variety_tracking_model_path)
 
+st.set_page_config(
+    page_title="Tree Classification and Mango Detection  ",
+    page_icon="🍃",
+    layout="wide"
+)
+
 # Streamlit sidebar
 st.sidebar.title("About This Tool")
 st.sidebar.markdown(
