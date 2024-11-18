@@ -25,6 +25,22 @@ model = YOLO(model_path)
 variety_tracking_model_path = os.path.join('models', 'classification.pt')
 variety_tracking_model = YOLO(variety_tracking_model_path)
 
+# Streamlit sidebar
+st.sidebar.title("About This Tool")
+st.sidebar.markdown(
+    """
+    ### 🍃 Tree Classification and Mango Detection  
+    This tool uses Yolo v11 models to perform:  
+    - **Tree Variety Classification**  
+    - **Mango Detection and Cropping**  
+    
+    Upload an image to analyze the type of tree and identify individual mangoes.  
+    Processed images and cropped mangoes can be downloaded for further analysis.  
+    
+    """
+)
+st.sidebar.info("Use the main interface to upload an image and run the analysis.")
+
 # Streamlit app interface
 st.title("🍃 Tree Classification and Mango Detection 🍃")
 st.markdown(
