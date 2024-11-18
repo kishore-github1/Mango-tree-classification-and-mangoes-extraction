@@ -7,6 +7,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import io
 import zipfile
+import os
 
 # Function to create a downloadable ZIP file
 def create_downloadable_zip(cropped_images):
@@ -21,11 +22,14 @@ def create_downloadable_zip(cropped_images):
     return zip_buffer
 
 # Load your YOLO models
-model_path = 'models\\extraction.pt'
+
+
+model_path = os.path.join('models', 'extraction.pt')
 model = YOLO(model_path)
 
-variety_tracking_model_path = 'models\\classification.pt'
+variety_tracking_model_path = os.path.join('models', 'classification.pt')
 variety_tracking_model = YOLO(variety_tracking_model_path)
+
 
 # Streamlit app interface
 st.title("Tree Classification and Mango Detection")
